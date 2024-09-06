@@ -6,6 +6,7 @@ import random
 import string
 from telebot import types
 from gatet import *
+from gate1 import *
 from reg import reg
 from datetime import datetime, timedelta
 from faker import Faker
@@ -210,7 +211,7 @@ def main(message):
 			return
 		keyboard = types.InlineKeyboardMarkup()
 		contact_button = types.InlineKeyboardButton(text=f"🏴‍☠️ 𝗕𝗥𝗔𝗜𝗡𝗧𝗥𝗘𝗘 𝗔𝗨𝗧𝗛 🏴‍☠️",callback_data='br')
-		sw = types.InlineKeyboardButton(text=f" 𝗦𝗤𝗨𝗔𝗥𝗘 𝗔𝗨𝗧𝗛 🪽",callback_data='sq')
+		sw = types.InlineKeyboardButton(text=f" STRIPE 𝗔𝗨𝗧𝗛 🪽",callback_data='sq')
 		keyboard.add(contact_button)
 		keyboard.add(sw)
 		bot.reply_to(message, text=f'𝘾𝙝𝙤𝙤𝙨𝙚 𝙏𝙝𝙚 𝙂𝙖𝙩𝙚𝙬𝙖𝙮 𝙔𝙤𝙪 𝙒𝙖𝙣𝙩 𝙏𝙤 𝙐𝙨𝙚',reply_markup=keyboard)
@@ -350,7 +351,7 @@ def menu_callback(call):
 def menu_callback(call):
 	def my_function():
 		id=call.from_user.id
-		gate='𝗦𝗤𝗨𝗔𝗥𝗘 𝗔𝗨𝗧𝗛'
+		gate='STRIPE 𝗔𝗨𝗧𝗛'
 		dd = 0
 		live = 0
 		riskk = 0
@@ -402,7 +403,7 @@ def menu_callback(call):
 					
 					start_time = time.time()
 					try:
-						last = str(sq(cc))
+						last = str(Tele1(cc))
 					except Exception as e:
 						print(e)
 						last = "ERROR"
@@ -442,7 +443,7 @@ def menu_callback(call):
 𝙄𝙨𝙨𝙪𝙚𝙧 ➼ {bank}
 𝙏𝙞𝙢𝙚 ➼ {"{:.1f}".format(execution_time)}
 𝗕𝗼𝘁 𝗕𝘆: @Dow993uf</b>'''
-					if "Funds" in last or 'Invalid postal' in last or 'avs' in last or 'added' in last or 'Duplicate' in last or 'Approved' in last or 'live' in last:
+					if "Funds" in last or 'Invalid postal' in last or 'avs' in last or 'added' in last or 'Duplicate' in last or 'Approved' in last or 'live' in last or 'successfully' in last:
 						live += 1
 						bot.send_message(call.from_user.id, msg)
 					elif 'risk' in last:
